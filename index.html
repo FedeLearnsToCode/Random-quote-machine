@@ -35,7 +35,7 @@
   </style>
 </head>
 
-<body class="min-vh-100 d-flex justify-content-center align-items-center bg-light">
+<body class="min-vh-100 d-flex justify-content-center align-items-center">
   <div id="root"></div>
 
   <!-- Script test freeCodeCamp -->
@@ -61,21 +61,24 @@
 
       const fetchQuote = async () => {
         try {
-          const res = await fetch('https://api.quotable.io/random');
+          const res = await fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json');
           if (!res.ok) throw new Error('API response was not ok');
           const data = await res.json();
-          setQuote({
-            content: data.content,
-            author: data.author
-          });
 
+          const randomIndex = Math.floor(Math.random() * data.quotes.length);
+          const randomQuote = data.quotes[randomIndex];
           const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+          setQuote({
+            content: randomQuote.quote,
+            author: randomQuote.author
+          });
           setBgColor(randomColor);
           setBtnColor(randomColor);
 
         } catch (error) {
-          setQuote({ content: 'Ops, error on cit loading!', author: '' });
-          console.error('Fetch error: ', error);
+          setQuote({ content: 'Ops, errore nel caricamento della citazione!', author: '' });
+          console.error('Errore fetch: ', error);
         }
       };
 
@@ -84,6 +87,7 @@
       }, []);
 
       React.useEffect(() => {
+        console.log('Colore di sfondo aggiornato:', bgColor);
         document.body.style.backgroundColor = bgColor;
       }, [bgColor]);
 
