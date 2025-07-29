@@ -32,6 +32,15 @@
       height: 100%;
       font-family: 'Inter', sans-serif;
     }
+
+    .btn-custom:hover {
+      transform: scale(1.1);
+    }
+
+    .btn-custom:focus {
+      outline: 3px solid #ffbf47;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 
@@ -102,15 +111,15 @@
             <span>
               <i className="fa-solid fa-quote-left" style={{ color: btnColor, fontSize: '50px' }}></i></span> {quote.content}</div>
           <div id="author" className='fs-5 mb-4 text-secondary'>- {quote.author}</div>
-          <button id="new-quote" className="btn mt-5 mb-3 fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} onClick={fetchQuote}>New quote</button>
+          <button id="new-quote" className="btn btn-custom mt-5 mb-3 fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} onClick={fetchQuote}>New quote</button>
           <div className='d-flex gap-3 justify-content-center align-items-center mt-3'>
-            <a href={tweetURL} id="tweet-quote" className="btn fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Tweet this quote" rel='noopener noreferrer'>
+            <a href={tweetURL} id="tweet-quote" className="btn btn-custom fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Tweet this quote" rel='noopener noreferrer'>
               <i className="fa-brands fa-twitter"></i>
             </a>
-            <a href={fbURL} id="facebook-quote" className="btn fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Share quote on Facebook" rel='noopener noreferrer'>
+            <a href={fbURL} id="facebook-quote" className="btn btn-custom fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Share quote on Facebook" rel='noopener noreferrer'>
               <i className="fa-brands fa-facebook"></i>
             </a>
-            <a href={whatsappURL} className="btn fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Share quote on WhatsApp" rel="noopener noreferrer">
+            <a href={whatsappURL} className="btn btn-custom fs-5" style={{ backgroundColor: btnColor, borderColor: btnColor, color: 'white' }} target="_blank" aria-label="Share quote on WhatsApp" rel="noopener noreferrer">
               <i className="fa-brands fa-whatsapp"></i>
             </a>
 
