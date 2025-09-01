@@ -21,6 +21,8 @@ This project was developed as part of the [FreeCodeCamp Front End Libraries Cert
 
 Initially, the project used an external API for quotes, but due to **CORS policy** issues, I decided to use the official FreeCodeCamp quote JSON file, which is more stable and compatible with the platform's automatic testing.
 
+To ensure that FreeCodeCamp's tests run correctly on GitHub Pages, I had to **embed the `app.js` logic directly inside the `index.html` file** using a `<script type="text/babel">` tag. This approach avoids issues with the test.
+
 ## 📦 Technologies Used
 
 - [React (via CDN)](https://reactjs.org/)
@@ -30,3 +32,4 @@ Initially, the project used an external API for quotes, but due to **CORS policy
 ---
 
 🎓 Built for the **Random Quote Machine** project by [FreeCodeCamp](https://www.freecodecamp.org/).
+
